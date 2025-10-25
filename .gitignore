@@ -40,4 +40,5 @@ yarn-error.log*
 # Cursor 설정 제외하지만 계획은 포함
 .cursor/*
 !.cursor/plans/
+!.cursor/plans/**
 .pnpm-store

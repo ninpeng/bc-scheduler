@@ -36,3 +36,7 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Cursor 설정 제외하지만 계획은 포함
+.cursor/*
+!.cursor/plans/

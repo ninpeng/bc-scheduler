@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// 스케줄 테이블
+model Schedule {
+  id          String   @id @default(cuid())
+  title       String   // 스케줄 제목
+  startTime   DateTime // 시작 시간
+  endTime     DateTime // 종료 시간
+  description String?  // 설명 (선택적)
+  userId      String   // 사용자 ID (나중에 회원 기능 추가용)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([startTime])
+}

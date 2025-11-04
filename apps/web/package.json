@@ -7,7 +7,10 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "check-types": "next typegen && tsc --noEmit"
+    "check-types": "next typegen && tsc --noEmit",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@prisma/client": "^6.18.0",
@@ -23,13 +26,20 @@
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.16",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.0",
     "@types/react-dom": "19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "@vitest/ui": "^4.0.6",
     "autoprefixer": "^10.4.21",
+    "jsdom": "^27.1.0",
     "postcss": "^8.5.6",
     "prisma": "^6.18.0",
     "tailwindcss": "^4.1.0",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "vitest": "^4.0.6"
   }
 }
